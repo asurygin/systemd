@@ -1,12 +1,11 @@
 #!/bin/bash
-sed -i '/Listen 80/d' /etc/httpd/conf/httpd.conf
 cp /srv/httpd/httpd@.service /etc/systemd/system/httpd@.service
 cp /srv/httpd/httpd-first /etc/sysconfig/httpd-first
 cp /srv/httpd/httpd-second /etc/sysconfig/httpd-second
 cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/first.conf
 cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/second.conf
 sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/second.conf
-sed -i '/ServerRoot "\/etc\/httpd"/a PidFile \/var\/run\/httpd-2.pid' /etc/httpd/conf/second.conf
+sed -i '/ServerRoot "\/etc\/httpd"/a PidFile \/var\/run\/second.pid' /etc/httpd/conf/second.conf
 
 systemctl disable httpd
 systemctl daemon-reload
