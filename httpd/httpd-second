@@ -1,1 +1,2 @@
-OPTIONS=-f conf/second.conf
+PORT=8001
+PID_FILE=/etc/httpd/run/httpd-second.pid

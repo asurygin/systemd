@@ -1,1 +1,2 @@
-OPTIONS=-f conf/first.conf
+PORT=8000
+PID_FILE=/etc/httpd/run/httpd-first.pid
